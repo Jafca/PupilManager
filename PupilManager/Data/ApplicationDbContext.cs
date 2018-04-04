@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using PupilManager.Models;
 
 namespace PupilManager.Data
 {
@@ -10,6 +11,8 @@ namespace PupilManager.Data
         {
             this.Database.EnsureCreated();
         }
+
+        public DbSet<Pupil> Pupils { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
