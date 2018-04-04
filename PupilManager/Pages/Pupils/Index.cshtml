@@ -1,0 +1,68 @@
+﻿@page
+@model PupilManager.Pages.Pupils.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Pupil[0].FirstNames)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pupil[0].LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pupil[0].DOB)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pupil[0].Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pupil[0].MedicalConditions)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Pupil)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstNames)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DOB)
+                </td>
+                <td>
+                    @if (item.Gender)
+                    {
+                        @Html.Raw("Girl");
+                    }
+                    else
+                    {
+                        @Html.Raw("Boy");
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MedicalConditions)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
