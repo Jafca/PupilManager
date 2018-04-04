@@ -4,6 +4,9 @@
     <UserSecretsId>aspnet-PupilManager-E5A3F32B-52C7-4AC3-89CB-977590DE7762</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="PupilManager.db-journal" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.2" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.3" PrivateAssets="All" />
