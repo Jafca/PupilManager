@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using PupilManager.Models;
 using System;
 using System.Linq;
-using PupilManager.Models;
 
 namespace PupilManager.Data
 {
@@ -10,8 +10,7 @@ namespace PupilManager.Data
     {
         public static void Initialize(IServiceProvider serviceProvider)
         {
-            using (var context = new ApplicationDbContext(
-                serviceProvider.GetRequiredService<DbContextOptions<ApplicationDbContext>>()))
+            using (var context = new ApplicationDbContext(serviceProvider.GetRequiredService<DbContextOptions<ApplicationDbContext>>()))
             {
                 if (context.Pupils.Any())
                 {

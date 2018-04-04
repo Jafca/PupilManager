@@ -33,6 +33,8 @@ namespace PupilManager
                 {
                     options.Conventions.AuthorizeFolder("/Account/Manage");
                     options.Conventions.AuthorizePage("/Account/Logout");
+                    options.Conventions.AuthorizePage("/Account/Register");
+                    options.Conventions.AuthorizeFolder("/Pupils");
                 });
 
             // Register no-op EmailSender used by account confirmation and password reset during development
